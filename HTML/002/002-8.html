@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 꾸미기</title>
+    <style>
+        div{
+            font-size:20px;
+            font-weight: 900;
+            margin:0 auto;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:130px;
+            height:50px;
+            color:white;
+            margin-bottom:10px;
+        }
+        div:first-child{
+            background-color: #343F50;
+            box-shadow:0 0 0 2px black;
+            padding:2px;
+            border-left:2px solid #4A5568;
+            border-top: 2px solid #4A5568;
+        }
+        div:nth-child(2){
+            background: linear-gradient(90deg, #8c49f6, #2e6df2);
+            border-radius:50px;
+            outline:4px dashed rgba(145,77,255,0.3);
+            height:60px;
+        }
+        div:nth-child(3){
+            color:#28353c;
+            border:2px solid #ddd;
+            box-shadow:5px 5px 10px #ccc;
+            border-radius: 0 50px 50px 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>Hello&#9995</div>
+    <div>Hello&#9995</div> 
+    <div>Hello&#9995</div> 
+</body>
+</html>
