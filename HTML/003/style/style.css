@@ -1,5 +1,9 @@
+*{
+    font-family: 'pretendard', sans-serif;
+}
 body{background-color: #CCC;}
-.card-item img{
+
+.card-item img:nth-child(2){
     width:100%;
     aspect-ratio: 288/196;
     object-fit: cover;
@@ -9,9 +13,9 @@ body{background-color: #CCC;}
     background-color: black;
 }
 .card-text{
-    padding:0 16px 23px;
+    float:left;
 }
-.card-item a{
+.card-item a.cursor{
     text-decoration: none;
     color: #29363D;
     display: block;
@@ -21,17 +25,17 @@ body{background-color: #CCC;}
     border-radius: 8px;
     overflow: hidden;
 }
-
-.card-text p{
-    font-size:12px;
+/* .card-text p{} */
+.card-text .main-text{
     color:#5a6a72;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     word-break: break-all;
-    margin:10px 0 19px;
+    margin:10px 16px 19px;
     line-height: 20px;
+    font-size: 12px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -40,14 +44,19 @@ body{background-color: #CCC;}
     font-size:14px;
     text-decoration: underline;
     padding-left:6px;
+    color:#29363D;
+    background: url('../image/Vector\ 7.png') no-repeat;
+    float:left;
+    margin: 0 0 23px 22px;
+    
 }
 
 .heading img{
     width: 40px;
     height: 40px;
-    float:left;
+    float: left;
     border-radius: 50%;
-    padding-right:16px;
+    margin-right:16px;
 }
 .heading{
     padding: 19px 16px 15px;
@@ -55,12 +64,13 @@ body{background-color: #CCC;}
 
 .heading h2{
     color: #29363D;
-    font-size:16px;
     line-height: 19px;
     font-weight: 700;
+    font-size:16px;
 }
 .heading h3{
-    font-size: 12px;
     color:#5a6a72;
     line-height: 14px;
+    font-weight: 400;
+    font-size: 12px;
 }
