@@ -1,0 +1,15 @@
+.grid-container{
+    width: 80vw;
+    height: 500px;
+    display: grid;
+    background: gray;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 500px))
+}
+.grid-item{
+    background: royalblue;
+    border:1px solid #ccc;
+}
+/* .grid-item:first-child{
+    grid-column: 1 / 3;
+    grid-row: 1 / span 2;
+} */
