@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <style>
+        /* 동적 가상 선택자
+        :active 클릭시
+        :hover 마우스 올릴 시
+        :focus focus 받은 상태
+        :visited 방문했을 시
+        :disabled 비활성화 됐을 때
+        */
+    </style>
+</head>
+<body>
+    <button>button</button>
+    <!-- button의 경우 여는태그, 닫는태그가 있어 여러 컨텐츠 삽입 및 :after :before과 같은 가상 요소를 사용할수도 있다. -->
+    <input type="button" value="input button" disabled>
+    <!-- input의 경우 value 특성에 text만 들어갈 수 있음 -->
+    <!-- disabled : 누를 수 없게 만듬 focus도 가지 않는다 -->
+
+    <!-- 키보드 사용자에게 a tag와 button tag의 차이 -->
+    <a href="#">앵커 버튼</a>
+    <!-- enter로 동작 -->
+    <button>button</button>
+    <!-- space, enter로 동작 -->
+    <!-- 접근성 측면에서, 버튼의 최소 크기를 44x44px 크기를 권장 -->
+</body>
+</html>

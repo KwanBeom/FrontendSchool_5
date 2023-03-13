@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button 실습</title>
+    <style>
+        [class*='btn']{
+            width: 88px;
+            height: 32px;
+            background-color: #343F50;
+            border: 1px solid #1A202C;
+            color: #CBD5DF;
+            font-weight: 700;
+            box-shadow: inset 1px 1px #4A5568; 
+            cursor: pointer;
+            transition: color .5s, background-color .3s;
+        }
+        [class*='btn']:hover, 
+        [class*='btn']:active{
+            text-decoration: underline;
+            color: #fff;
+        }
+        .btn:active{
+            box-shadow: inset 1px 1px #262f3e;
+        }
+
+        .btn:disabled{
+            color: #4A5568;
+            box-shadow: none;
+            text-decoration: none;
+            background-color: #3A4556;
+            border: 1px solid #343E4E;
+        }
+
+        .yes-btn{
+            color:#439AFF;
+        }
+        .yes-btn:hover, 
+        .yes-btn:active{
+            background: #439AFF;
+        }
+
+        .del-btn{
+            color:#D94242;
+        }
+        .del-btn:hover, 
+        .del-btn:active{
+            background: #EB5757;
+        }
+        .yes-btn:hover, 
+        .del-btn:hover,
+        .yes-btn:active, 
+        .del-btn:active{
+            border: 1px solid transparent;
+        }
+
+        .yes-btn:hover, 
+        .del-btn:hover{
+            box-shadow: inset 1px 1px rgba(255,255,255,0.3);
+        }
+        .yes-btn:active, 
+        .del-btn:active{
+            box-shadow: inset 1px 1px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="btn">Button</button>
+    <button type="button" class="yes-btn">Yes</button>
+    <button type="button" class="del-btn">Del</button>
+    <button type="button" class="btn" disabled>Button</button>
+</body>
+</html>
