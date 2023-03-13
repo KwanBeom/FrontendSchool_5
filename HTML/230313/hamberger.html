@@ -6,41 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>햄버거 메뉴 만들기</title>
     <style>
-        .burger{
-            cursor:pointer;
+        .menu-trigger{
+            width:50px;
+            height:35px;
+            position: relative;
+            display: block;
         }
-        .bar{
+        .menu-trigger span{
             width: 50px;    
             height: 5px;
             background: #000;
             border-radius: 10px;
-            display: block;
+            position: absolute;
+            transition: .2s;
         }
-        .bar:nth-child(-n+2){
-            margin-bottom: 10px;
+        span:nth-child(1){
+            top:0;
         }
-
-        .burger:hover .bar{
-            position: relative;
+        span:nth-child(2){
+            top:50%;
+            transform: translate(0, -50%);
         }
-        .burger:hover .bar:first-child{
+        span:nth-child(3){
+            bottom:0;
+        }
+        .menu-trigger:hover span:nth-child(1){
             transform: rotate(45deg);
-            margin-top:25px;
+            top:50%;
         }
-        .burger:hover .bar:nth-child(2){
-            visibility: hidden;
+        .menu-trigger:hover span:nth-child(2){
+            transform: translate(50%, 0);
+            opacity: 0;
         }
-        .burger:hover .bar:last-child{
+        .menu-trigger:hover span:nth-child(3){
             transform: rotate(-45deg);
-            margin-top:-25px;
+            top:50%;
         }
     </style>
 </head>
 <body>
-    <button class="menu" type="button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
+    <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
 </body>
 </html>
