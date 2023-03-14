@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <label for="user-id">아이디</label>
+    <input id="user-id">
+    <label for="user-pw">비밀번호</label>
+    <input id="user-pw" type="password">
+
+    <select>
+        <optgroup label="1번" name="user-as" >
+            <option>1</option>
+            <option>2</option>
+        </optgroup>
+        <optgroup label="2번">
+            <option>1</option>
+            <option>2</option>
+        </optgroup>
+    </select>
+    <fieldset>
+    <legend>Skills</legend>
+        <input type="checkbox" id="tech1"><label for="tech1">HTML</label>
+        <input type="checkbox" id="tech2"><label for="tech2">CSS</label>
+        <input type="checkbox" id="tech3"><label for="tech3">React</label>
+        <input type="checkbox" id="tech4"><label for="tech4">JavaScript</label>
+        <input type="checkbox" id="tech5"><label for="tech5">TypeScript</label>
+        <input type="checkbox" id="tech6"><label for="tech6">Sass</label>
+        <input type="checkbox" id="tech7"><label for="tech7">Vue</label>
+    </fieldset>
+
+    <label for="datalist">datalist</label>
+    <input list="data-da" id="datalist" name="datalist">
+    <datalist id="data-da">
+        <option value="데이터1번">
+        <option value="데이터2번">
+        <option value="데이터3번">
+        <option value="데이터4번">
+        <option value="데이터5번">
+    </datalist>
+
+    <textarea row="3" maxlength="10" placeholder="홀더"></textarea>
+</body>
+</html>

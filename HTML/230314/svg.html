@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>svg</title>
+    <style>
+        .bg-icon{
+            background: url('./image/icon-home.svg') no-repeat 0 0 / contain;
+            width: 24px;
+            height: 24px;
+        }
+        .a11y-hidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+        img:hover svg{
+            stroke: aqua;
+        }
+    /* 
+        svg 파일 사용법
+        1. img 태그
+        2. css background
+        3. 인라인으로 넣기
+
+        이미지에 조작이 필요하면 인라인으로 삽입
+
+        stroke, fill
+    */
+    </style>
+</head>
+<body>
+    <img src="./image/icon-home.svg" alt="home">
+    <div class="bg-icon">
+        <span class="a11y-hidden">홈아이콘</span>
+    </div>
+</body>
+</html>

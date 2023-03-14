@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+}
+
+.header .join-btn{
+    display: block;
+    font-size: 1.4em;
+    padding: 1em;
+    float: right;
+    margin: 10px;
+    text-decoration: none;
+    color: #5a6a72;
+    background: url(../image/icon-join.svg) no-repeat 0 center / 2em;
+    padding-left: 2em;
+    font-weight: bold;
+}
+
+.header-wrap{
+    width:1224px;
+    margin: 0 auto;
+    padding: 22px 0;
+}
