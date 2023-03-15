@@ -1,0 +1,12 @@
+/* 디바이스 가로 */
+@media(orientation:portrait) { 
+    body {
+        background: royalblue;
+    }
+}
+/* 디바이스 세로 */
+@media(orientation:landscape) {
+    body {
+        background: skyblue;
+    }
+}

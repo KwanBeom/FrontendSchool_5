@@ -1,0 +1,130 @@
+.heart{
+    font-size: 16px;
+    background: url('../image/heart.svg') no-repeat 0 center / contain;
+    padding-left: 1.4em;
+}
+
+.diary-textarea{
+    width: 100%;
+    height: 360px;
+    resize: none;
+    padding: 16px;
+    box-sizing: border-box;
+    display: block;
+    border: 0;
+}
+
+.diary-main textarea{
+    margin: 16px 0;
+}
+
+/* article */
+ul,
+li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+p,
+h3{
+    margin: 0;
+}
+
+.diary-article{
+    border-width: 4px 1px 1px 1px;
+    border-style: solid;
+    border-color: #677880;
+    padding: 64px 48px;
+    position: relative;
+}
+.diary-article::before,
+.diary-article::after{
+    content: '';
+    display: block;
+    width: 80px;
+    height: 40px;
+    position: absolute;
+}
+
+.diary-article::before{
+    top: -20px;
+    left: 30px;
+    background: #fffaf0 url(../image/quote-start.svg) no-repeat;
+}
+
+.diary-article::after{
+    bottom: -20px;
+    right: 30px;
+    background: #fffaf0  url(../image/quote-end.svg) no-repeat;
+}
+.article-title{
+    color: #29363d;
+    font-size: 16px;
+    float: left;
+}
+.article-title::before{
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    border-top: 1px solid #677880;
+    z-index: -1;
+}
+
+.article-time{
+    color: #677880;
+    float: right;
+    font-size: 12px;
+}
+
+.article-content{
+    font-size: 14px;
+    clear:both;
+    color: #5a6a72;
+    line-height: 1.4;
+    margin-top: 40px;
+}
+
+.container{
+    display: flex;
+    width: 1224px;
+    max-width: calc(100% - 60px);
+    margin: 0 auto;
+    gap: 40px;
+}
+
+
+
+.container main{
+    flex: 0 0 416px;
+    /*
+    grow/ shirink / basis
+    커지는가/작아지는기/기본크기는
+     */
+    border-right: 1px solid #ff416e;
+    padding: 62px 40px 0 0;
+    box-sizing: border-box;
+}
+
+
+@media (max-width:1024px){
+    .container{
+        flex-direction: column;
+    }
+    .container main{
+        border-right: 0;
+        padding-right: 0;
+    }
+}
+
+
+.container section{
+    padding-top: 94px;
+    flex: 0 0 728px;
+}
+
+.container section ul li{
+    margin-bottom: 76px;
+}
