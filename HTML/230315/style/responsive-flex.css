@@ -1,0 +1,163 @@
+@font-face {
+    font-family: "SpoqaHanSansNeo-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SpoqaHanSansNeo-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Bold.woff")
+    format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "SpoqaHanSansNeo-Regular";
+    font-size: 16px;
+    color: #121314;
+    padding: 12.5vw 0 0 0 ;
+}
+.bold{
+    font-family: "SpoqaHanSansNeo-Bold";
+}
+body, h1, h2, p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container{
+    display: flex;
+    width: 1200px;
+    min-width: 400px;
+    max-width: calc(100% - 60px);
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.flex-left{
+    flex: 1 0;
+}
+.flex-right{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 0 1 486px;
+}
+
+.flex-left h1{
+    font-weight: normal;
+    /* 70 70 36 */
+    font-size:70px;
+}
+.flex-left p{
+    /* 20 18 14 */
+    font-size: 20px;
+    color: #47494d;
+    /* 20 20 14 */
+    margin-top:20px;
+}
+
+.flex-right a{
+    border-radius: 20px;
+    /*
+    40 30 30 40
+    30 20 20 30
+    30 20 20 30 
+     */
+    aspect-ratio: 486 / 280;
+    padding: 40px 30px 30px 40px;
+    color:white;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-right h2{
+    /* 30 24 20 */
+    font-size:30px;
+}
+
+.flex-right a:first-child{
+    background: url(../image/Rectangle\ 2.png) no-repeat 0 0 / cover;
+}
+.flex-right a:last-child{
+    background: url(../image/Rectangle\ 3.png) no-repeat 0 0 / cover;
+}
+
+.flex-right span{
+    align-self: flex-end;
+}
+
+.arrow::after{
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border: 1px solid #fff;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+    margin: 0 0 1px .5em;
+}
+
+@media (min-width:769px) and (max-width:1200px){
+    .flex-right{
+        flex-direction: row;
+        flex: 0;
+    }
+}
+
+@media (max-width: 1200px){
+    .container{
+        flex-direction: column;
+        /* 60 40 */
+        gap: 60px;
+    }
+    .flex-left p{
+        /* 20 18 14 */
+        font-size: 18px;
+    }
+    .flex-right a{
+        /*
+        40 30 30 40
+        30 20 20 30
+        30 20 20 30 
+         */
+        padding: 30px 20px 20px 30px;
+        flex-grow: 1;
+    }
+    .flex-right h2{
+        /* 30 24 20 */
+        font-size:24px;
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        gap: 14px;
+    }
+    .flex-left h1{
+        font-weight: normal;
+        /* 70 70 36 */
+        font-size:36px;
+    }
+    .flex-left p{
+        /* 20 18 14 */
+        font-size: 14px;
+        /* 20 20 14 */
+        margin-top:14px;
+    }
+    .flex-right{
+        gap:14px;
+    }
+    .flex-right h2{
+        /* 30 24 20 */
+        font-size:20px;
+    }
+}
