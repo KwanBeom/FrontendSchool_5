@@ -86,6 +86,37 @@ h3{
     line-height: 1.4;
     margin-top: 40px;
 }
+.edit-article{
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #677880;
+    width: 111px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit-article button{
+    background: none;
+    border: 0;
+    padding: 0;
+    opacity: .5;
+    height: 32px;
+}
+.edit-article button:hover{
+    opacity: 1;
+}
+.edit-article span{
+    width: 1px;
+    height: 16px;
+    background: #d8ddde;
+    display: inline-block;
+    margin: 0 8px;
+}
 
 .container{
     display: flex;

@@ -3,76 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/reset.css">    
+    <meta name="viewport" content="wispanh=device-wispanh, initial-scale=1.0"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/001.css">
-    <title>final 코딩테스트 1</title>
+    <title>정글 시네마</title>
 </head>
 <body>
-    <article class="wrap">
-        <header>
-            <h1>정글 시네마 영화 목록</h1>
-            <p><hr></p>
-            <ul>
-                <li><a href="#">현재상영영화</a></li>
-                <li><a href="#">개봉예정영화</a></li>
-                <li><a href="#">박스오피스</a></li>
-            </ul>
-        </header>
-        <div class="grid-container">
-            <div class="gird-item">
-                <img src="./image/img1.png">
-                <h2>위니브 월드 : 새로운 시대</h2>
-            </div>
-            <div class="gird-item">
-                <img src="./image/img2.png">
-            </div>
-            <div class="gird-item">
-                <img src="./image/img3.png">
-            </div>
-            <div class="gird-item">
-                <img src="./image/img4.png">
-            </div>
-            <div class="gird-item">
-                <img src="./image/img5.png">
-            </div>
-            <div class="gird-item">
-                <img src="./image/img6.png">
-            </div>
-            <div class="gird-item">
-                <img src="./image/img7.png">
-            </div>
-            <div class="gird-item">
-                <img src="./image/img8.png">
-            </div>
+    <div class="wrap">
+        <div class="container">
+            <header class="header">
+                <h1>정글 시네마 영화 목록</h1>
+                
+                <nav>
+                    <ul>
+                        <span><button type="button" class="on">현재상영영화</button></span>
+                        <span><button type="button">개봉예정영화</button></span>
+                        <span><button type="button">박스오피스</button></span>
+                    </ul>
+                </nav>
+
+            </header>
+            <main class="main">
+                <h2 class="a11y-hidden">현재 상영 영화</h2>
+                <article class="movie-wrap">
+                    
+                    <div class="movie-contents">
+                        <img src="./image/img1.png" alt="">
+                        <h3 class="movie-name">위니브 월드 : 새로운 시대</h3>
+                        <ul>
+                            <li>
+                                <span>개요</span>
+                                <span>판타지</span>
+                            </li>
+                            <li class="score-text">
+                                <span>평점</span>
+                                <span class="movie-score">9.05</span>
+                            </li>
+                            <li>
+                                <span>개봉</span>
+                                <time datetime="2021-03-27">2021.03.27</time>
+                            </li>
+                            <li>
+                                <span>출연</span>
+                                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-area">
+                        <a href="#">예매하기</a>
+                        <button type="button">예고편</button>
+                    </div>
+
+                </article>
+
+                <article class="movie-wrap">
+                    
+                    <div class="movie-contents">
+                        <img src="./image/img2.png" alt="">
+                        <h3 class="movie-name">위니브 월드 : 새로운 시대</h3>
+                        <ul>
+                            <li>
+                                <span>개요</span>
+                                <span>판타지</span>
+                            </li>
+                            <li class="score-text">
+                                <span>평점</span>
+                                <span class="movie-score">9.05</span>
+                            </li>
+                            <li>
+                                <span>개봉</span>
+                                <time datetime="2021-03-27">2021.03.27</time>
+                            </li>
+                            <li>
+                                <span>출연</span>
+                                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-area">
+                        <a href="#">예매하기</a>
+                        <button type="button">예고편</button>
+                    </div>
+
+                </article>
+
+                <article class="movie-wrap">
+                    
+                    <div class="movie-contents">
+                        <img src="./image/img3.png" alt="">
+                        <h3 class="movie-name">위니브 월드 : 새로운 시대</h3>
+                        <ul>
+                            <li>
+                                <span>개요</span>
+                                <span>판타지</span>
+                            </li>
+                            <li class="score-text">
+                                <span>평점</span>
+                                <span class="movie-score">9.05</span>
+                            </li>
+                            <li>
+                                <span>개봉</span>
+                                <time datetime="2021-03-27">2021.03.27</time>
+                            </li>
+                            <li>
+                                <span>출연</span>
+                                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-area">
+                        <a href="#">예매하기</a>
+                        <button type="button">예고편</button>
+                    </div>
+
+                </article>
+
+                <article class="movie-wrap">
+                    
+                    <div class="movie-contents">
+                        <img src="./image/img4.png" alt="">
+                        <h3 class="movie-name">위니브 월드 : 새로운 시대</h3>
+                        <ul>
+                            <li>
+                                <span>개요</span>
+                                <span>판타지</span>
+                            </li>
+                            <li class="score-text">
+                                <span>평점</span>
+                                <span class="movie-score">9.05</span>
+                            </li>
+                            <li>
+                                <span>개봉</span>
+                                <time datetime="2021-03-27">2021.03.27</time>
+                            </li>
+                            <li>
+                                <span>출연</span>
+                                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-area">
+                        <a href="#">예매하기</a>
+                        <button type="button">예고편</button>
+                    </div>
+
+                </article>
+
+                <article class="movie-wrap">
+                    
+                    <div class="movie-contents">
+                        <img src="./image/img5.png" alt="">
+                        <h3 class="movie-name">위니브 월드 : 새로운 시대</h3>
+                        <ul>
+                            <li>
+                                <span>개요</span>
+                                <span>판타지</span>
+                            </li>
+                            <li class="score-text">
+                                <span>평점</span>
+                                <span class="movie-score">9.05</span>
+                            </li>
+                            <li>
+                                <span>개봉</span>
+                                <time datetime="2021-03-27">2021.03.27</time>
+                            </li>
+                            <li>
+                                <span>출연</span>
+                                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-area">
+                        <a href="#">예매하기</a>
+                        <button type="button">예고편</button>
+                    </div>
+
+                </article>
+
+                <article class="movie-wrap">
+                    
+                    <div class="movie-contents">
+                        <img src="./image/img6.png" alt="">
+                        <h3 class="movie-name">위니브 월드 : 새로운 시대</h3>
+                        <ul>
+                            <li>
+                                <span>개요</span>
+                                <span>판타지</span>
+                            </li>
+                            <li class="score-text">
+                                <span>평점</span>
+                                <span class="movie-score">9.05</span>
+                            </li>
+                            <li>
+                                <span>개봉</span>
+                                <time datetime="2021-03-27">2021.03.27</time>
+                            </li>
+                            <li>
+                                <span>출연</span>
+                                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-area">
+                        <a href="#">예매하기</a>
+                        <button type="button">예고편</button>
+                    </div>
+
+                </article>
+
+                <article class="movie-wrap">
+                    
+                    <div class="movie-contents">
+                        <img src="./image/img7.png" alt="">
+                        <h3 class="movie-name">위니브 월드 : 새로운 시대</h3>
+                        <ul>
+                            <li>
+                                <span>개요</span>
+                                <span>판타지</span>
+                            </li>
+                            <li class="score-text">
+                                <span>평점</span>
+                                <span class="movie-score">9.05</span>
+                            </li>
+                            <li>
+                                <span>개봉</span>
+                                <time datetime="2021-03-27">2021.03.27</time>
+                            </li>
+                            <li>
+                                <span>출연</span>
+                                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-area">
+                        <a href="#">예매하기</a>
+                        <button type="button">예고편</button>
+                    </div>
+
+                </article>
+
+                <article class="movie-wrap">
+                    
+                    <div class="movie-contents">
+                        <img src="./image/img8.png" alt="">
+                        <h3 class="movie-name">위니브 월드 : 새로운 시대</h3>
+                        <ul>
+                            <li>
+                                <span>개요</span>
+                                <span>판타지</span>
+                            </li>
+                            <li class="score-text">
+                                <span>평점</span>
+                                <span class="movie-score">9.05</span>
+                            </li>
+                            <li>
+                                <span>개봉</span>
+                                <time datetime="2021-03-27">2021.03.27</time>
+                            </li>
+                            <li>
+                                <span>출연</span>
+                                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-area">
+                        <a href="#">예매하기</a>
+                        <button type="button">예고편</button>
+                    </div>
+
+                </article>
+            </main>
         </div>
-    </article>
-    <footer>
-        <div>
-            <h2>Jungle Cinema</h2>
-            <ul>
-                <li>
-                    <a href="www.twitter.com" target="_blank">
-                        <img src="./image/twitter.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="www.instagram.com" target="_blank">
-                        <img src="./image/instagram.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="www.facebook.com" target="_blank">
-                        <img src="./image/facebook.png">
-                    </a>
-                </li>
-            </ul>
-            <hr>
-            <p>(주) 정글 시네마<span>대표</span>라이언<span>사업자 번호</span>000-0000-0000<span></span>광고 영화 및 비디오물 제작업<span>주소</span>서울특별시</p>
-        </div>
-    </footer>
+
+        <footer>
+
+        </footer>
 </body>
 </html>
