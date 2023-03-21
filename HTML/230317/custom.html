@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title></title>
+    <style>
+        select{
+            color: inherit;
+        }
+        .custom-select1{
+            font-size: 14px;
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid #c4c4c4;
+            padding: 0 14px;
+            appearance: none;
+            background: url(./image/select.svg) no-repeat calc(100% - 15px) / 1em;
+        }
+        .custom-select1:focus{
+            outline: none;
+            border-color: #9b51e0;
+            box-shadow: 0 0 0 3px #f8e4ff;
+        }
+
+        button, ul, li{
+            border: 0;
+            background: 0;
+            font: inherit;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+        }
+        ul, li{
+            list-style: none;
+        }
+        .custom-select{
+            width: 200px;
+            position: relative;
+            margin-bottom: 9px;
+        }
+        .custom-select > button{
+            font-size: 14px;
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid #c4c4c4;
+            padding: 0 14px;
+            text-align: left;
+        }
+        .custom-select > button::after{
+            content: '';
+            display: block;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            background: url(./image/select.svg) no-repeat center / 1em;
+            position: absolute;
+            text-align: left;
+            top: 50%;
+            right: 1.2em;
+        }
+        .custom-select ul{
+            border: 1px solid #c4c4c4;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            padding: 10px 8px;
+            position: absolute;
+            top: 49px;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+        .custom-select ul li + li {
+            margin-top: 10px;
+        }
+        .custom-select ul li button {
+            width: 100%;
+            height: 30px;
+            text-align: left;
+            border-radius: 8px;
+            padding: 0 10px;
+        }
+        .custom-select ul li button:hover {
+            background: #f8e4ff;
+        }
+
+        .custom-select.active > button::after {
+            transform: rotate(180deg);
+        }
+        .custom-select.active > button,
+        .custom-select > button:focus {
+            outline: none;
+            border-color: #9b51e0;
+            box-shadow: 0 0 0 3px #f8e4ff;
+        }
+        .custom-select ul {
+            display: none;
+        }
+        .custom-select.active ul {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <select class="custom-select1">
+        <option>프로그래밍 언어</option>
+        <option>프로그래밍 언어</option>
+        <option>프로그래밍 언어</option>
+        <option>프로그래밍 언어</option>
+        <option>프로그래밍 언어</option>
+        <option>프로그래밍 언어</option>
+        <option>프로그래밍 언어</option>
+    </select>
+
+    <div class="custom-select">
+        <button class="btn-select" type="button">최애 프로그래밍 언어</button>
+        <ul>
+            <li>12321321</li>
+            <li>12321321</li>
+            <li>12321321</li>
+            <li>12321321</li>
+            <li>12321321</li>
+            <li>12321321</li>
+        </ul>
+    </div>
+</body>
+    <script>
+        let list = document.querySelector('.custom-select');
+
+        list.addEventListener('click', function(){
+            list.classList.toggle('active');
+        });
+    </script>
+</html>

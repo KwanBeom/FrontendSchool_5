@@ -1,3 +1,6 @@
+*{
+    font-family: 'noto sans kr';
+}
 a{
     color: initial;
     text-decoration: initial;
@@ -34,21 +37,19 @@ ul, li{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    display: inline-block;
 }
 
 .container{
     width: 1060px;
     margin: 86px auto;
     background: #F2F2F2;
-    padding: 0 40px 30px 30px;
+    padding: 0 29px 31px;
     box-sizing: border-box;
     border-radius: 15px;
     border: 2px solid #BDBDBD;
 }
 .header{
     text-align: center;
-    font-family: 'roboto';
 }
 .header h1{
     font-size: 24px;
@@ -75,20 +76,18 @@ ul, li{
     font-weight: 900;
 }
 
-.main{
-    font-family: 'Noto Sans KR';
-}
 .movie-wrap{
     width: 220px;
     border: 1px solid #f2f2f2;
     box-sizing: border-box;
     border-radius: 10px;
+    border: 1px solid #BDBDBD;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 .movie-wrap .movie-name{
     font-weight: bold;
     font-size: 16px;
-    margin: 12px 0;
+    margin: 8px 0 12px;
 }
 
 .movie-wrap ul{
@@ -143,13 +142,13 @@ ul, li{
     flex-basis: 50%;
     font-weight: 500;
     font-size: 14px;
-    font-family: "noto sans kr";
 }
 .btn-area button::before{
     content: '';
     background: url('../image/icon-play.svg')  no-repeat 0 50% / 13px;
     width: 13px;
     height: 13px;
+    padding-right: 3px;
     display: inline-block;
 }
 
@@ -164,3 +163,53 @@ ul, li{
     margin-top: 18px;
 }
 
+footer{
+    background-color: #F2F2F2;
+    padding: 53px 0 38px; 
+    font-size: 14px;
+}
+footer h2{
+    font-size: 24px;
+}
+.footer-wrap{
+    width: calc(100% - 366px * 2);
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.footer-wrap ul li{
+    display: inline-block;
+}
+
+
+.footer-item{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-item:first-child{
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 38px;
+}
+.footer-item:last-child{
+    padding-top: 36px;
+}
+
+.sns-item li a{
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.footer-info{
+    color: #4F4F4F;
+}
+
+.footer-info li .bold{
+    font-weight: 700;
+}
+
+.footer-info li:not(:first-child)::before{
+    content: '|';
+    padding: 0 5px;
+
+}

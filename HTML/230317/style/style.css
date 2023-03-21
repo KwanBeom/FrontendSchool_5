@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+*{
+    font-family: 'pretendard-regular';
+    font-weight: normal;
+}
+a{
+    text-decoration: none;
+    color: initial;
+}
+body, h1, h2, p, ul, li, a{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 16px;
+}
+ul, li{
+    list-style: none;
+}
+
+/* 공지사항 */
+.notice{
+    width: 728px;
+    height: 272px;
+    color: #29363D;
+    position: relative;
+}
+.notice-title{
+    font-size: 30px;
+    font-weight: 700;
+}
+.notice-box{
+    margin-top: 22px;
+    border-top: 1px solid #e2e2e2;
+}
+.notice-box li{
+    display: flex;
+
+    padding: 17px 16px 20px;
+    gap: 16px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.notice-box li p{
+    width: 571px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice-box time{
+    margin-left: auto;
+}
+
+.notice-box li strong{
+    display: none;
+    font-weight: 700;
+    color: #2E6FF2;
+}
+.notice-box li.now-notice p{
+    width: 460px;
+    text-overflow: clip;
+}
+.notice-box li.now-notice strong{
+    display: block;
+}
+
+.notice .more-view{
+    position: absolute;
+    top:0;
+    right: 0;
+}
