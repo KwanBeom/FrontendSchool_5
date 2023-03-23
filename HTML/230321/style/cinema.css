@@ -173,6 +173,7 @@ footer h2{
 }
 .footer-wrap{
     width: calc(100% - 366px * 2);
+    min-width: 1080px;
     margin: auto;
     display: flex;
     justify-content: space-around;

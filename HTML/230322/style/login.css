@@ -1,0 +1,208 @@
+* { 
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    font-weight: normal;
+    font-size: 16px;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+p, h1, h2{
+    padding:0;
+    margin: 0;
+}
+button{
+    padding: 0;
+    margin: 0;
+    background: initial;
+    border: 0;
+    cursor: pointer;
+}
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+input:focus-visible{
+    outline: 3px solid #000;
+}
+.login-modal{
+    width: 520px;
+    height: 736px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    color: #767676;
+}
+.modal-header{
+    width: 100%;
+    border-bottom: 1px solid #C4C4C4;
+    text-align: center;
+    padding: 20px 0 18px;
+    position: relative;
+    color: #000;
+}
+.modal-content{
+    padding: 26px 24px 25px;
+}
+.modal-content h2{
+    color: #000;
+}
+
+.close-btn{
+    position: absolute;
+    padding: 20px;
+    margin-right: 10px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+}
+.close-btn span{
+    position: absolute;
+    width: 22px;
+    height: 1px;
+    background: #767676;
+}
+.close-btn span:first-child{
+    transform: rotate(-45deg);
+}
+.close-btn span:last-child{
+    transform: rotate(45deg);
+}
+
+.login-modal h2{
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+input:not([type="checkbox"]){
+    width: 100%;
+    height: 50px;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#user-id{
+    margin-bottom: 10px;
+}
+#user-pw{
+    margin-bottom: 16px;
+}
+#still-login{
+    margin-bottom: 21px;
+}
+.login-chkbox:focus-visible{
+    border: 3px solid #000;
+}
+.login-chkbox::before{
+    content: '';
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 1px #767676;
+    vertical-align: bottom;
+    margin-right: 8px;
+    background: url('../images/check.svg') no-repeat center 7px / 12px;
+}
+#still-login:checked + .login-chkbox::before{
+    background: #2F80ED url('../images/checked.svg') no-repeat center 7px / 12px;
+    box-shadow: none;
+}
+
+#login button{
+    width: 100%;
+    text-align: center;
+    background: #2F80ED;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 5px;
+    margin: 20px 0 21px;
+    padding: 14px 0;
+}
+
+.join-find{
+    text-align: center;
+    margin-bottom: 36px;
+}
+.find::before{
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    vertical-align: -2px;
+    background: #767676;
+    margin: 0 12px 0 10px;
+}
+.section-line{
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: #767676;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.section-line::before,
+.section-line::after{
+    content: '';
+    flex-grow: 1;
+    background-color: #767676;
+    height: 1px;
+    margin: 0 13px;
+}
+
+[class^="account"]{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    position: relative;
+    border-radius: 5px;
+}
+.account-google{
+    border-color: #767676;
+}
+.account-facebook{
+    border-color: #2F80ED;
+}
+.account-naver{
+    border-color: #00BF18;;
+}
+.account-kakao{
+    border-color: #F2C94C;
+}
+[class^="account"]::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 16px;
+    width: 22px;
+    height: 22px;
+}
+.account-google::before{
+    background: url('../images/Google__G__Logo\ 1.svg') 0 0 / cover;
+}
+.account-facebook::before{
+    background: url('../images/facebook.svg') 0 0 / cover;
+}
+.account-naver::before{
+    background: url('../images/naver-logo.svg') 0 0 / cover;
+}
+.account-kakao::before{
+    background: url('../images/message-circle.svg') 0 0 / cover;
+}
