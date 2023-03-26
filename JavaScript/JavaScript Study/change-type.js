@@ -18,7 +18,8 @@ console.log(Object(5));
 console.log(new Number(5));
 
 
-//숫자 > 문자열 변환 > 이해가 잘 안 감
+//숫자 > 문자열 변환
+console.log(String(3));
 
 // 불리언 > 문자열 변환
 console.log(String(true)); // 문자열 true
