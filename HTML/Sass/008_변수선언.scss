@@ -1,0 +1,18 @@
+$bk1: #e00;
+$bk2: #0ff;
+$big-font: 34px;
+
+.one {
+    font-size: $big-font;
+    color: $bk1;
+    background: $bk2; 
+}
+
+.two{
+    background-color: $bk2;
+    color: $bk1;
+}
+
+.three{
+    color: $bk1;
+}

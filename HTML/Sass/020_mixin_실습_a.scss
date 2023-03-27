@@ -1,0 +1,26 @@
+@mixin layout($justify, $align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin item($width, $height, $radius){
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+}
+
+.card {
+    @include layout(center, center);
+}
+
+.card-item{
+    @include item(100px, 100px, 10%);
+}
+
+.product {
+    @include layout(right, right);
+}
+
+.product-item{
+    @include item(200px, 200px, 25%);
+}

@@ -1,0 +1,13 @@
+.one{
+    $main-color: red;
+    color: $main-color;
+
+    .three{
+        color: $main-color;
+    }
+}
+//error
+/*.two{
+    color: $main-color;
+}*/
+

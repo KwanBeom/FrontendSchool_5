@@ -1,0 +1,10 @@
+.one {
+  color: red;
+}
+.one .three {
+  color: red;
+}
+
+/*.two{
+    color: $main-color;
+}*//*# sourceMappingURL=010_변수선언.css.map */

@@ -1,0 +1,18 @@
+@debug not true;
+@debug not false;
+
+@debug true and false;
+@debug true or false;
+
+
+$value: 32px;
+$color: green;
+p {
+    @if ($value >=32px and $color == red) {
+        letter-spacing: 1rem;
+    }
+
+    @else {
+        letter-spacing: 0.5rem;
+    }
+}

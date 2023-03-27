@@ -1,0 +1,27 @@
+ul{
+    li{
+        &:hover{
+            background: #fff;
+            cursor: pointer;
+        }
+        &:last-child{
+            border: 2px solid #000;
+        }
+    }
+}
+
+ol{
+    border: 1px solid black;
+    
+    li{
+        &:nth-child(1){
+            color: red;
+        }
+        &:nth-child(2){
+            color: orangered;
+        }
+        &:nth-child(3){
+            color: yellow;
+        }
+    }
+}
