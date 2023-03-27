@@ -1,7 +1,7 @@
-$bk : 5;
+$bk : 3;
 
 @while $bk > 1 {
-    $bk: $bk - 1;
+    $bk : $bk - 1;
 
     .content-#{$bk} {
         width: 100px;
