@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        * {
+            color: #333333;
+        }
+        p {
+            margin-bottom: 1px;
+        }
+        .gray {
+            color: #a0a0a0;
+        }
+        .special-day {
+            display: flex;
+            justify-content: space-between;
+        }
+        .title {
+            display: flex;
+            align-items: center;
+        }
+        .days-left {
+            text-align: right;
+        }
+        .date {
+            text-align: right;
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class='container d-flex flex-column justify-content-center align-items-center mt-3'>
+        <h3>두희♥지숙</h3>
+        <h3 id='love'>0일째</h3>
+        <h4 class="date">2020.6.30</h4>
+    </div>
+    <section class='special-day'>
+        <h3 class='title'>발렌타인 데이</h3>
+        <div class='date-box'>
+            <p id='valentine' class='days-left'>0일 남음</p>
+            <p class='date'>2024.2.14</p>
+        </div>
+    </section>
+    <section class='special-day'>
+        <h3 class='title'>1000일</h3>
+        <div class='date-box'>
+            <p id='thousand' class='days-left'>0일 남음</p>
+            <p id='thousand-date' class='date'>0000.00.00</p>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        var now = new Date();
+        var start = new Date('2020-06-30')
+
+        var timeDiff = now.getTime() - start.getTime();
+        var day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1);
+        //Math.floor 소수점을 날리는 내장함수
+        $('#love').text(day + '일째');
+
+        var valentine = new Date('2024-02-14')
+        timeDiff = valentine.getTime() - now.getTime();
+        day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1);
+
+        $('#valentine').text(day + "일 남음")
+
+        var ms = start.getTime() + 999 * (1000 * 60 * 60 * 24);
+        var thousand = new Date(ms);
+        var thousandDate = thousand.getFullYear() + '.' + (thousand.getMonth() + 1) + '.' + thousand.getDate();
+        timeDiff = thousand.getTime() - now.getTime();
+        day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1);
+
+        $('#thousand-date').text(thousandDate);
+        $('#thousand').text(day + "일 남음")
+        
+    </script>
+</body>
+</html>

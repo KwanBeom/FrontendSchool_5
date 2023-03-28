@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .wrap{
+            display: relative;
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button{
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            border: 0;
+        }
+        #spit{
+            height: 30px;
+            border-radius: 0 50% 50% 0;
+            display: none;
+            position: absolute;
+            left: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hp">HP: 3</h1>
+    <div class="wrap">
+        <button id="drone">드론</button>
+        <button id="spit">스핏</button>
+        <button id="bunker">벙커</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        var hp = 3;
+        $('#drone').click(function(){
+            $('#spit').fadeIn();
+            $('#spit').animate({left: '+=400'});
+            $('#spit').fadeOut(function(){
+                hp = hp - 1;
+                $('#hp').text('HP: ' + hp);
+                if(hp == 0 || hp <= 0){
+                    $('#bunker').fadeOut();                    
+                    $('#hp').text('GAME OVER');
+                }
+            });
+            $('#spit').css({left:'100px'});
+        });
+    </script>
+</body>
+</html>
