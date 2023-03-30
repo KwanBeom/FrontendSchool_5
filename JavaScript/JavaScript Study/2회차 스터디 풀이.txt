@@ -1,0 +1,57 @@
+제어문
+
+1.
+var result;
+if ( x % 2){
+	result = '홀수';
+} else {
+	result = '짝수';
+}
+
+(result % 2 ? '홀수' : '짝수');
+
+2. if(x == y) {
+	document.write(`두 변수 ${x}와 ${y} 는 같습니다.`);
+}
+
+3. for (var i = 1; i <= 6; i++) {
+	for (var j = 1; j <= 6; j++) {
+		if (i + j === 6) console.log('['+ i + '], [' + j + ']');
+	}
+}
+
+
+4. 프로퍼티
+
+5.  1
+'Done!'
+
+배열
+1. b
+2. b
+3. b
+4. c
+5. 2차원
+6. a, 문자열은 읽기전용이다
+7. a, c, d
+
+함수
+
+1. X
+2. 지역 지역 지역 
+3. undefined 20 undefined
+4. 파라미터, 아규먼트
+5. O
+
+객체
+1. object
+2. O O
+3. c
+4. 상속
+5. 
+a. O
+b. X
+c. X
+d. Xs
+e. O
+f. X
