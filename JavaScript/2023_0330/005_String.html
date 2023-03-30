@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let text = 'ABCDEFGHIJK'
+
+        // Sass는 인덱스가 1부터 시작하지만 다른 프로그래밍 랭귀지는 0부터 시작
+        console.log(text[0]) 
+        console.log(text[2])
+        console.log(text[-1])
+        // JavaScript에서는 마이너스 인덱싱을 허락하지 않는다.
+        console.log(text.length)
+        console.log(text.indexOf('E'))
+        console.log(text.search('E'))
+
+        // 없는 값은 -1 반환
+        console.log(text.indexOf('Z')) 
+        console.log(text.search('Z'))
+
+
+    </script>
+</body>
+</html>
