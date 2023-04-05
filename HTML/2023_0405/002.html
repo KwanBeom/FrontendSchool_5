@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* video{
+            max-width: 100%;
+        } */
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .vw100{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-height: 100%;
+            pointer-events: none;
+        }
+        .video-wrap{
+            position: relative;
+            padding-top: 56.25%;
+        }
+        .video-stayc{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <video src="nextlevel.mp4" controls autoplay muted></video> -->
+    <!-- autoplay loop -->
+    <!-- <article class="video-wrap">
+        <iframe class="video-stayc" src="https://www.youtube.com/embed/DTG04YNkocM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </article> -->
+    <video class="vw100" src="nextlevel.mp4" controls autoplay muted></video>
+</body>
+</html>
