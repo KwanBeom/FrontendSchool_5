@@ -45,7 +45,7 @@ document.getElementById().onclick = function(){
 // previousSibling : 이전 형제 노드
 
 // 노드에 대한 정보 접근
-// nodeName, noveValue, nodeType과 같은 프로퍼티로 접근이 가능함
+// nodeName, nodeValue, nodeType과 같은 프로퍼티로 접근이 가능함
 
 
 // 노드의 생성
