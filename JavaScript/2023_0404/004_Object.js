@@ -6,7 +6,7 @@ const human = {
     from: "republic of korea",
     askingHim: function(){
         console.log("안녕하세요 최범관입니다");
-    }
+    } // 메서드
 }
 
 human.name = 'choi'
