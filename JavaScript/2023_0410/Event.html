@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        .on{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button type="button">클릭해보세요</button>
+    <button type="button" class="testClass">클래스</button>
+</body> 
+<script>
+    const btn = document.querySelector("button");
+
+    btn.addEventListener('click', function(){
+        alert("hello");
+    });
+
+    // target.addEventListener(); // 이벤트 삽입
+
+    // 클래스제어
+    const classBtn = document.querySelector(".testClass");
+    
+    classBtn.addEventListener('click', function(){
+        classBtn.classList.toggle("on"); // 클래스가 없으면 추가 있으면 제거 
+        // classBtn.classList.add("on"); // 클래스 추가
+        // classBtn.classList.remove("on"); // 클래스 제거
+        // classBtn.classList.contains("on"); // 클래스가 있는지 확인 boolean으로 반환
+    });
+
+</script>
+</html>

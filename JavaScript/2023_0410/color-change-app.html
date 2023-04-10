@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            width: 50vw;
+            height: 50vh;
+            border: 1px solid #ccc;
+        }
+        .red{
+            background: red;
+        }
+        .yellow{
+            background: yellow;
+        }
+        .green{
+            background: green;
+        }   
+        ul{
+            display: flex;
+            gap: 15vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <ul>
+        <li>
+            <button class="button-r" id="red">빨강</button>
+        </li>
+        <li>
+            <button class="button-y" id="yellow">노랑</button>
+        </li>
+        <li>
+            <button class="button-g" id="green">초록</button>
+        </li>
+    </ul>
+</body>
+<script>
+    // const redButton = document.querySelector("#red")
+    //     ,yellowButton = document.querySelector("#yellow")
+    //     ,greenButton = document.querySelector("#green")
+    //     ,box = document.querySelector(".box")
+    //     ,btn = document.querySelectorAll("button");
+
+    // for(i=0;i<btn.length; i++){
+    //     btn[i].addEventListener('click', () => {
+    //         box.classList.remove("red","green","yellow");
+    //     });
+    // }
+    // redButton.addEventListener('click', () => {
+    //     box.classList.add("red");
+    // });
+    // yellowButton.addEventListener('click', () => {
+    //     box.classList.add("yellow");
+    // });
+    // greenButton.addEventListener('click', () => {
+    //     box.classList.add("green");
+    // });
+
+    const box = document.querySelector(".box");
+    const btns = document.querySelectorAll("button");
+
+    btns.forEach((item) => {
+        item.addEventListener('click', () => {
+            box.classList.remove("red", "yellow", "green");
+            if(item.classList.contains("button-r")){
+                box.classList.add("red");
+            }else if(item.classList.contains("button-y")){
+                box.classList.add("yellow");
+            }else{
+                box.classList.add("green");
+            }
+        })
+    })
+</script>
+</html>
