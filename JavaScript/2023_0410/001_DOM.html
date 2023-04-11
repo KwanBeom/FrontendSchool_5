@@ -38,16 +38,19 @@
     // const target = document.querySelector(".item-second");
     // target.remove();
 
-    // li의 0번째 요소에 접근 // 유사 배열 객체로 반환되어 key로 탐색
+    // li의 0번째 요소에 접근 
+    // 유사 배열 객체로 반환되어 key로 탐색
     console.log(document.getElementsByTagName("li")[0]); 
     
-    // class로 접근
-    console.log(document.getElementsByTagName("li")); // HTMLCollection // HTMLCollection은 실시간으로 업데이트 됨
-    console.log(document.querySelectorAll("li")) // NodeList // NodeList는 정적이므로 변경사항이 바로 반영되지 않는다. // 하지만 원래 가지고 있든 태그의 내부 요소가 변했을시 에는 NodeList도 반영이 된다.
+    // HTMLCollection // HTMLCollection은 실시간으로 업데이트 됨
+    console.log(document.getElementsByTagName("li")); 
+    console.log(document.querySelectorAll("li")) 
+    // 쿼리셀렉터로 뽑으면 NodeList 유사배열객체로 인덱스 탐색가능
+    // NodeList는 정적이므로 변경사항이 바로 반영되지 않는다. // 하지만 원래 가지고 있든 태그의 내부 요소가 변했을시 에는 NodeList도 반영이 된다.
     
     // css 선택자로 접근 가능
     console.log(container.querySelector("li:last-child"));
-
+    // 클래스로 접근
     container.querySelector('.item-second').textContent = "Text_content";
     
 </script>

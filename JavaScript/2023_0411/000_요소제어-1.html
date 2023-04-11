@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="parent">
+        <span id="child">Hello</span>
+    </div>
+
+    <script>
+        const span = document.createElement("span")
+        const sibling = document.getElementById("child")
+        const parentDiv = document.getElementById("parent")
+
+        parentDiv.insertBefore(span, sibling);
+        // target 요소를 parent 요소의 자식인 location 위치 앞으로 삽입
+        parentDiv.insertAdjacentHTML('beforebegin', '<span>hi</span>')
+        // beforebegin, afterbegin, beforeend, afterend
+    </script>
+</body>
+</html>

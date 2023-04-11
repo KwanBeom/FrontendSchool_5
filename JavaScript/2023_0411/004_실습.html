@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color picker</title>
+    <style>
+        body, h1, p{
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            width: 100%;
+            background-color: #ccc;
+            height: 100vh;
+        }
+        .wrapper{
+            text-align: center;
+        }
+        .picker{
+            display: inline-block;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="wrapper">
+        <article class="picker">
+            <label for="bg">배경색 : </label>
+            <input type="color" id="bg" class="bg-color" data-id="bg-color">
+        </article>
+        <article class="picker">
+            <label for="bg" id="bg">글씨색 : </label>
+            <input type="color" id="bg" class="txt-color" data-id="txt-color">
+        </article>
+    </section>
+    <main>
+        <h1>Color Picker!!</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore architecto sunt totam earum, natus odit, possimus soluta nam assumenda magnam voluptates, corporis suscipit numquam quasi! Velit alias exercitationem odio totam?</p>
+    </main>
+    
+
+    <script>
+            const ipt = document.querySelectorAll("input")
+            
+
+            for (i = 0; i < ipt.length; i++) {
+                ipt[i].addEventListener('input', () => {
+                    const bgColor = document.querySelector(".bg-color");
+                    const txtColor = document.querySelector(".txt-color");
+                    const mainBg = document.querySelector("main")
+                    
+                    mainBg.style.color = txtColor.value;
+                    mainBg.style.background = bgColor.value;
+                })
+            }
+    </script>
+</body>
+
+</html>
