@@ -1,3 +1,4 @@
+// 1번
 function multiplyAll(x, y){
     let result = 1;
     for(let i = x; i <= y; i++){
@@ -8,6 +9,8 @@ function multiplyAll(x, y){
 
 multiplyAll(1, 8);
 
+
+// 2번
 const max = function(arr){
     let output = arr[0]
     for (const i of arr) {
@@ -20,7 +23,8 @@ const max = function(arr){
 
 console.log(max([1, 2, 3, 4, 5]))
 
-const max1 = function(x){
+// 3번
+const max1 = function(...x){
     let output = arr[0]
 
     return output
