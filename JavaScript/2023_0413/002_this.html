@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title></title>
+</head>
+<body>
+    <button id="btn1">click</button>
+    <button id="btn2">click</button>
+<script>
+    let myObj = {
+    val1: 100,
+    func1: function(){
+        console.log(this);
+        }
+    }
+
+    let test = myObj.func1;
+
+    let btn1 = document.getElementById('btn1');
+    let btn2 = document.getElementById('btn2');
+
+    btn1.addEventListener('click', myObj.func1) // btn1
+    btn2.addEventListener('click', test) // window여야 하지만 btn2
+</script>
+</body>
+</html>
