@@ -60,6 +60,6 @@ function 함수({
     return a + b + c
 }
 
-함수()
+함수() // error
 함수({})
 함수({b: 100})
