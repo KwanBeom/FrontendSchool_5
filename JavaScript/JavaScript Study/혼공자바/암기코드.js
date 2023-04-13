@@ -1,50 +1,56 @@
-// 구구단 for
+// 구구단
+// 암기코드 1
 for (let i = 2; i < 10; i++) {
-    for(let j = 1; j < 10; j++){
-        console.log(`${i} * ${j} = ${i*j}`)
+    for (let j = 1; j < 10; j++) {
+        console.log(`${i} X ${j} = ${i * j}`)
     }
 }
-// 구구단 while
+
 let i = 2;
-while(i < 10){
+while (i < 10) {
     let j = 1;
-    while(j < 10){
-        console.log(`${i} * ${j} = ${i*j}`)
+    while (j < 10) {
+        console.log(`${i} x ${j} = ${i * j}`);
         j++;
     }
     i++;
 }
 
-// 기억해두면 좋은 코드
+
+// 암기코드 2
 let s = 'hello world'
 let result = ''
-for (let i = 0; i < s.length; i++){
-    console.log(i)
-    result += s[i]
+for (let i = 0; i < s.length; i++) {
+    result = s[i] + result
 }
 
 console.log(result)
 
-let s1 = 'hello world'
-let result1 = ''
-let count = 0;
-while (count < result.length){
-    result1 += s1[count]
-    count++
+
+
+let s = 'hello world'
+let result = ''
+let count = 0
+while (count < s.length) {
+    result = s[count] + result
+    count++;
 }
 
+console.log(result)
 
-// 기억해두면 좋은 코드 
-// 팩토리얼 for
-let s2 = 1;
+// 암기코드 3
+// 팩토리얼
+// 5! = 5 * 4 * 3 * 2 * 1
+let s = 1;
 for (let i = 1; i < 6; i++) {
-    s2 *= i;
+    s *= i
 }
-console.log(s2)
-// 팩토리얼 while
-let s3 = 1;
+console.log(s)
+
+
+let s = 1;
 i = 1;
 while (i < 6) {
-    s3 *= i
+    s *= i
     i += 1
 }
