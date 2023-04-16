@@ -28,3 +28,32 @@ let output = '';
 console.log(output)
 ///
 }
+
+
+{
+    let output=''
+    const size=5
+    
+    
+    for(let i=0;i<size;i++){
+        for(let j=0;j<size-i-1;j++){
+            output+=' '
+        }
+        for(let j=0;j<2*i+1;j++){
+            output+='*'
+        }
+        output+='\n'
+    }
+    
+    for(let i=0;i<size-1;i++){
+        for(let j=0;j<i+1;j++){
+            output+=' '
+        }
+        for(let j=0;j<(2*size-3)-2*i;j++){
+            output+='*'
+        }
+        output+='\n'
+    }
+    
+    console.log(output);
+}
