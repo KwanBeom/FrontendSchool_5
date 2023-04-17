@@ -22,7 +22,7 @@ for (const item of arr) { // for of 문은 iterable(순회가능)한 값이 사�
 }
 
 for (const i in 'hello world'){
-    console.log(item)
+    console.log(i)
 }
 
 // 문제
