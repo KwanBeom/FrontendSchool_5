@@ -1,3 +1,4 @@
+// 1번
 function multiplyAll(x, y){
     let result = 1;
     for(let i = x; i <= y; i++){
@@ -8,6 +9,8 @@ function multiplyAll(x, y){
 
 multiplyAll(1, 8);
 
+
+// 2번
 const max = function(arr){
     let output = arr[0]
     for (const i of arr) {
@@ -20,10 +23,36 @@ const max = function(arr){
 
 console.log(max([1, 2, 3, 4, 5]))
 
-const max1 = function(x){
+// 3번 풀어봐야함
+const max1 = function(...x){
     let output = arr[0]
 
     return output
 }
 
 console.log(max(1, 2, 3, 4, 5))
+
+// 4번 풀어봐야함
+{
+const max = function(...x){
+    let output
+    let items
+
+    if(Array.isArray(items)){
+        console.log('1')
+    output = items[0]
+        for(const i of items){
+            if(output < i){
+                output = i;
+            }
+        }
+    }
+    if(typeof items == Number){
+        console.log('2')
+        output = math.Max(items);
+    }
+
+
+    return output
+}
+}
