@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    const canvas = document.getElementById("canvas");
+    canvas.width = 1000
+    // 기본사이즈(300) - CSS로 수정하면 이 비율에서 압축으로 간다
+    // ex css가 500으로 할당 되었다면 2배 압축되어 들어감, 고해상도 지원시 사용
+    canvas.height = 1000
+    // 기본사이즈 (150)
+
+    const ctx = canvas.getContext('2d')
+    // ctx.fillStyle = 'green' // css color와 동일
+    // ctx.fillRect(100, 100, 400, 250) // x, y, width, height
+
+    function 사각형(ctx){
+        ctx.fillStyle = 'blue'
+        ctx.fillRect(100, 100, 50, 100)
+    }
+
+    사각형(ctx);
+
+    function 삼각형(ctx){
+        ctx.beginPath();
+        ctx.moveTo(75, 50);
+        ctx.lineTo(100, 75);
+        ctx.lineTo(100, 25);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+    }
+    
+    삼각형(ctx);
+
+    function 원(ctx){
+        // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc
+        // https://squll1.tistory.com/entry/canvas-arc-%EC%9B%90%ED%98%B8-%EA%B7%B8%EB%A6%AC%EA%B8%B0
+        // arc(x, y, radius, startAngle, endAngle, counterclockwise)
+        ctx.beginPath()
+        ctx.arc(50, 120, 10, 0, Math.PI*2, false);
+        ctx.fill();
+    }
+
+    원(ctx);
+</script>
+</html>
