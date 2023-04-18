@@ -5,7 +5,7 @@ function attackBeam() { // 레이저 공격
     this.hp -= 20
 }
 
-function attackKnife() { // 칼공격
+function atckKnife() { // 칼공격
     if (this.name === 'thanos'){
         this.hp -= 1
         return
