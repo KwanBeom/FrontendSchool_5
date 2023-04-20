@@ -37,7 +37,7 @@ var c = {
 }
 
 var b = {
-    'c' : c,
+    'c' : c
 }
 
 var a = {
