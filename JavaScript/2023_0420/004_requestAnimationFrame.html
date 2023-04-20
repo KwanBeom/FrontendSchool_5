@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            width:100px;
+            height: 100px;
+            position: absolute;
+            left:0;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="moveDiv"></div>
+
+    <script>
+        const box = document.querySelector('.moveDiv')
+        let pos = 0;
+        // 사용자가 입력한 키를 저장하는 객체
+        let keys = {}
+
+        // 사용자가 키를 눌렀을 시
+        function move(e) {
+            keys[e.key] = true;
+        }
+
+        // 사용자가 키를 뗐을 시
+        function stop(e) {
+            keys[e.key] = false;
+        }
+
+        document.addEventListener('keydown', move)
+        document.addEventListener('keyup', stop)
+
+        function play() {
+            if(keys.ArrowRight){
+                pos += 5;
+                box.style.transform = `translateX(${pos}px)`;
+            } 
+            if (keys.ArrowLeft) {
+                pos -= 5;
+                box.style.transform = `translateX(${pos}px)`;
+            }
+
+            requestAnimationFrame(play);
+        }
+        play();
+
+        // window.addEventListener('keydown', (e) => {
+        //     if(e.keyCode === 37){
+        //         pos -= 5
+        //         box.style.transform = `translateX(${pos}px)`
+        //     } else if(e.keyCode === 39){
+        //         pos += 5
+        //         box.style.transform = `translateX(${pos}px)`
+        //     }
+        // })
+
+        // window.addEventListener('keydown', move)
+
+        // function move(e){
+        //     if(e.keyCode === 37){
+        //         pos -= 5
+        //         box.style.transform = `translateX(${pos}px)`
+        //     } else if(e.keyCode === 39){
+        //         pos += 5
+        //         box.style.transform = `translateX(${pos}px)`
+        //     }
+        // }
+    </script>
+</body>
+</html>
