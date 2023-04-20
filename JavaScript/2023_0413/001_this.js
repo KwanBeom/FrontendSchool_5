@@ -1,79 +1,199 @@
-// this는 객체를 가리키는 자기 참조 변수
-// 자신을 호출한 객체, 자신이 생성할 객체
-function a(){console.log(this)}
+// this(***)
+
+function a() { console.log(this) }
 a(); // window를 호출
+// 일반 함수의 this는 전역객체를 가리킨다
+// 객체에서의 this는 자신을 호출한 객체를 가리킨다
+
+function b() {
+    console.log('hello world')
+}
+b()
+window.b() // window를 호출
+// 전역에서 정의한 함수는 window 객체에 메서드로 추가된다
 
 let myObj = {
     val1: 100,
-    func1: function(){
+    func1: function () { 
         console.log(this);
+        // this가 누구일까?
+        // 찍어보면 됩니다. console.log
+        // 1. func1
+        // 2. myObj
+        // 3. window
     }
 }
 
 myObj.func1(); // myObj를 호출
+// 객체 내부의 메서드를 호출하면 this는 메서드가 속한 객체를 가리킨다 
 
-///////////////
 
-let myObj1 = {
+/////////////////////
+
+let myObj = {
     val1: 100,
-    func1: function(){
+    func1: (function () {
         console.log(this);
-    }
+    })
 }
 
-let test = myObj1.func1(); 
-test() // window를 호출
+let test = myObj.func1; 
+test()
 
-// this를 포함하고 있는 객체가 있는 위치에 따라 this의 의미가 달라진다
+// 메서드가 얕은 복사가 되어서 test에 할당됐다
+// test함수를 실행하면 일반 함수로서 실행이 된다
+// this가 window를 가리키게 된다
+// 일반 함수의 this는 전역객체를 가리킨다
 
+////////////////////
 
-function sayName(){
+// this가 어려운 이유는 this를 포함하고 있는 객체가 있는 위치에 따라 this의 의미가 달라지기 때문입니다.
+// bind를 포함한 예외사항이 있습니다.
+
+function sayName() {
     console.log(this)
 }
 
 var c = {
-    'hello' : 'world',
-    'say' : sayName
+    'hello': 'world',
+    'say': sayName
 }
 
-var b = {
-    'c' : c
+var b = { // var b = {c}
+    'c': c
 }
 
-var a = {
-    'b' : b
+var a = { // var a = {b}
+    'b': b
 }
 
-// button1이 myObj를 가지는게 아니고, 같은 myObj의 주소를 가리키게 된 것
+c.say() // c
+b.c.say() // c 
+a.b.c.say() // c
+// 객체 내부의 메서드를 호출하면 this는 메서드가 속한 객체를 가리킨다 
 
-var name = 'bk'
+// 문제를 조금 더 꼬아보겠습니다.
+function sayName() {
+    console.log(this)
+}
 
-function sayName(){
+var c = {
+    'hello': 'world',
+    'say': sayName // c
+}
+
+var b = { // var b = {c}
+    'c': c,
+    'say': sayName // b
+}
+
+var a = { // var a = {b}
+    'b': b,
+    'say': sayName // a
+} 
+a.say() // a
+b.say() // b
+c.say() // c
+// 객체 내부의 메서드를 호출하면 this는 메서드가 속한 객체를 가리킨다 
+
+/// 추가 예제 ///
+
+var name = 'hojun'
+
+function sayName() {
     console.log(this.name)
 }
-
-sayName()
 
 let peter = {
     name: 'Peter Parker',
     say: sayName
 }
-let brue = {
+
+let bruce = {
     name: 'Bruce Wayne',
     say: sayName
 }
 
-////////
-function attackBeam(){ // 레이저 공격
+peter.say() // Peter Parker
+// peter.name
+bruce.say() // Bruce Wayne
+// 객체 어쩌구
+// bruce.name
+sayName() // hojun
+// 일반 함수의 this는 전역객체를 가리킨다
+// window.name
+
+////
+
+function attackBeam() { // 레이저 공격
     this.hp -= 20
 }
 
-function attackKnife(){ // 칼 공격
+let jombie = {
+    name: 'jombie',
+    damaged: attackBeam,
+    hp: 10000,
+    power: 2
+}
+
+
+let thanos = {
+    name: 'thanos',
+    damaged: attackBeam,
+    hp: 1000,
+    power: 100
+}
+
+// 객체 내부 어쩌구
+
+jombie.damaged()
+jombie
+// hp : 9980
+
+/////
+
+function attackBeam() { // 레이저 공격
+    this.hp -= 20
+}
+
+function attackKnife() { // 칼공격
     this.hp -= 5
 }
 
-let jombi = {
-    name: 'jombi',
+let jombie = {
+    name: 'jombie',
+    damaged1: attackBeam,
+    damaged2: attackKnife,
+    hp: 10000,
+    power: 2
+}
+
+let thanos = {
+    name: 'thanos',
+    damaged: attackBeam,
+    hp: 1000,
+    power: 100
+}
+
+jombie.damaged1() // Beam
+jombie.damaged2() // Knife
+jombie.hp
+// 9975
+
+/////
+
+function attackBeam() { // 레이저 공격
+    this.hp -= 20
+    console.log(this)
+}
+
+function attackKnife() { // 칼공격
+    this.hp -= 5
+    console.log(this)
+}
+
+let jombie = {
+    name: 'jombie',
     damaged: [attackBeam, attackKnife],
     hp: 10000,
     power: 2
@@ -86,12 +206,18 @@ let thanos = {
     power: 100
 }
 
-jombi.damaged([0])
-jombi
+jombie.damaged[0]() // Beam
+jombie.damaged[1]() // Knife
+
+// attackBeam, attackKnife가 속한 객체는 배열이라서
+// this가 배열을 가리킨다
+// 배열에 hp 프로퍼티가 추가되고 NaN이 된다 (undefined - 숫자)
+// 배열도 object
+// typeof [] : object
+
+///////
 
 
-
-////////
 let 호텔 = [{
     '이름': '하나호텔',
     '위치': '제주도 제주시 001',
@@ -116,15 +242,38 @@ let 호텔 = [{
 }];
 console.log(호텔[0].남은방의개수());
 console.log(호텔[1].남은방의개수());
-console.log(호텔[2].남은방의개수());
+console.log(호텔[2].남은방의개수()); 
+// 객체 안의 메서드~ this ~ 어쩌구
+/////
 
-////////
 
-function a(){
+// https://velog.io/@proshy/JS-%EC%83%81%ED%99%A9%EC%97%90-%EB%94%B0%EB%A5%B8-this-%EB%B0%94%EC%9D%B8%EB%94%A9
+function sayName() {
     console.log(this)
-    function b(){
+}
+
+var c = {
+    'hello': 'world',
+    'say': sayName
+}
+
+var b = {
+    'c': c,
+}
+
+var a = {
+    'b': b,
+}
+
+a.b.c.say()
+// 일단 이거먼저
+// 객체 안의 메서드~ this ~ 어쩌구
+
+function a() {
+    console.log(this)
+    function b() {
         console.log(this)
-        function c(){
+        function c() {
             console.log(this)
         }
         c()
@@ -132,6 +281,6 @@ function a(){
     b()
 }
 a()
-
-// a, b, c 모두 window
-// 타고올라가는 형태가 아닙니다. a.b.c.this x
+// a, b, c모두 window
+// 위 함수는 a.b.c()이런 식으로 호출한 객체를 타고 올라가는 형태가 아닙니다.
+// 셋 다 일반함수로서의 호출을 한다
