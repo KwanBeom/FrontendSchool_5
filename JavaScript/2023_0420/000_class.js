@@ -31,7 +31,7 @@ a.taste = '파' // '파'
 // 하지만 중요한 데이터를 비공개 프로퍼티로 변경할 수 있음
 class Robot{
     #password
-    constructor(name){
+    constructor(name, pw){
         this.name = name;
         this.#password = pw;
     }
