@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>heart</title>
+    <style>
+        path{
+            fill: none;
+            stroke: #ff9797;
+            stroke-width: 10px;
+            stroke-linecap: round;
+            stroke-dasharray: 3147 3147;
+            animation: line 5s;
+        }
+
+        @keyframes line {
+            from{
+                stroke-dashoffset: 3147;
+            }to{
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="578" height="417" viewBox="0 0 578 417" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="path2" d="M113 44C124.333 168.333 124.8 402.2 36 343C-52.8 283.8 71 236.333 144 220C165 221.667 202.6 239 185 295C163 365 290 305 289 300C288 295 260 256 237 269C214 282 207.317 277 195 295C182.683 313 163 347 179 354C195 361 196.975 374 237 374C254 374 320 331 303 354L329 318L390 127C383.333 38.6667 366.4 -88.2 352 111C352 198.2 381.333 322.667 396 374L471 220C484.667 172.667 507 71.2 487 44C467 16.8 456.667 252.667 454 374C485.667 385.333 552.8 397.2 568 354C583.2 310.8 553 287.333 536 281L496 288C486.333 298.667 467.8 322.8 471 334C475 348 475 354 481 364C487 374 486 389 503 393C520 397 313 432 536 393"/>
+    </svg>
+
+    <script>
+        const path1 = document.querySelector("path")
+        console.log(path1.getTotalLength())
+    </script>
+</body>
+
+</html>

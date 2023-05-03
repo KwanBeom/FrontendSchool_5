@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>레이어 팝업</title>
+    <style>
+        body, h1{
+            padding: 0;
+            margin: 0;
+        }
+        .btn-open{
+            border: 0;
+            width: 180px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow: 2px 2px 4px #000;
+            color: white;
+            background-color: #d97652;
+            transition: .2s;
+            border-radius: 20px;
+        }
+        .btn-open:active{
+            box-shadow: none;    
+        }
+
+        .layer-popup{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 240px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #fff;
+            z-index: 100;
+        }
+        .hidden-wrapper{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            background-color: rgba(0,0,0,0.5);
+            
+        }
+        .layer-popup.hidden + .hidden-wrapper{
+            display: none;
+        }
+        .menu{
+            list-style: none;
+            padding: 0;
+            color: #fff;
+        }
+        .menu li a{
+            color: initial;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        .menu li a:hover{
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        .btn-close{
+            position: absolute;
+            top: -10px;
+            right: -10px;;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            background-color: orangered;
+            padding: 10px;
+            color: #fff;
+            cursor: pointer
+        }
+        .btn-close img{
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .a11y-hidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+        .hidden{
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+        <h1>레이어 팝업</h1>
+        <button class="btn-open" type="button">메뉴 열기</button>
+        <article class="layer-popup hidden">
+            <h2 class="a11y-hidden">전체 메뉴</h2>
+            <ul class="menu">
+                <li><a href="#">메뉴 1</a></li>
+                <li><a href="#">메뉴 2</a></li>
+                <li><a href="#">메뉴 3</a></li>
+            </ul>
+            <button class="btn-close" type="button">
+                <img src="./Group 1.svg" alt="닫기">
+            </button>
+        </article>
+        <div class="hidden-wrapper"></div>
+    <script>
+        const openBtn = document.querySelector(".btn-open"),
+            layerPopup = document.querySelector(".layer-popup"),
+            closeBtn = layerPopup.querySelector(".btn-close"),
+            bcWrapper = document.querySelector(".hidden-wrapper")
+
+
+        // 첫번째 포커스 요소
+        const firstEl = layerPopup.querySelector("a")
+    
+        function visible(){
+            layerPopup.classList.remove("hidden")
+            firstEl.focus()
+        }
+        function hidden(){
+            layerPopup.classList.add("hidden")            
+        }
+
+        openBtn.addEventListener('click', visible)
+        closeBtn.addEventListener('click', hidden)
+        closeBtn.addEventListener('keydown', function(e) {
+            if(!e.shiftKey && e.key === "Tab"){
+                e.preventDefault();
+                firstEl.focus();
+            }
+        })
+        firstEl.addEventListener('keydown', function(e) {
+            if (e.shiftKey && e.key === "Tab"){
+                e.preventDefault();
+                closeBtn.focus();
+            }
+        })
+        bcWrapper.addEventListener('click', hidden)
+        document.addEventListener('keydown', function(e) {
+            if(!layerPopup.classList.contains("hidden") && e.key === "Escape"){
+                hidden()
+            }
+        })
+
+    </script>
+</body>
+</html>
