@@ -1,0 +1,16 @@
+.list-area{
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.list-item{
+    border: 1px solid #000;
+}
+.list-item + .list-item{
+    border-top: 0;
+}
+
+.list-item.active{
+    background-color: royalblue;
+    color: aliceblue;
+}
