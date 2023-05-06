@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title></title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function fetchData () {
+            fetch("http://test.api.weniv.co.kr/mall")
+                .then(response => response.json())
+                .then(data => {
+                    const body = (
+                            <main>
+                                <Product item={data}/>
+                            </main>
+                        )
+                    const domContainer = document.querySelector('#root');
+                    const root = ReactDOM.createRoot(domContainer);
+                    root.render(body);
+                })
+                .catch(e => console.log(e))
+        }
+        // 내부 카드 요소
+        function Card(props) {
+            return (
+                <li className="card-item">
+                    <h2>{props.obj.productName}</h2>
+                    <p>{props.obj.price}</p>
+                </li>
+            )
+        }
+        // 감싸는 애
+        function Product(props) {
+            console.log(props)
+            return (
+                <ul className="product-list">
+                    <Card obj={props.item[0]} />
+                    <Card obj={props.item[1]} />
+                    <Card obj={props.item[2]} />
+                    <Card obj={props.item[3]} />
+                    <Card obj={props.item[4]} />
+                    <Card obj={props.item[5]} />
+                    <Card obj={props.item[6]} />
+                </ul>
+            )
+        }
+
+        fetchData()
+    </script>
+</body>
+
+</html>
