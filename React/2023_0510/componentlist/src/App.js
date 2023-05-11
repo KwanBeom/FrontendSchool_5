@@ -49,17 +49,17 @@ function App() {
     // 내부적으로 동일한 내용의 state 함수 호출이 여러번 반복되면
     // 하나의 업데이트로 취급하여 처리된다.
     function handleClick(id) {
-        // setDatas(datas.filter(item => id !== item.id))
+        setDatas(datas.filter(item => id !== item.id))
 
         // 함수형 업데이트
         // 함수형 업데이트를 사용하면 함수의 인자로 전달되는 state 값을
         // React가 이전 state 값으로 보장한다.
         // 때문에 상태 업데이트가 비동기적으로 처리된다고 해도 안정적으로 이전 값과 이후 값(가상 돔)을 비교하여 처리할 수 있다.
-        setDatas((prevDatas) => {
-            return prevDatas.filter((item) => {
-                return id !== item.id;
-            });
-        });
+        // setDatas((prevDatas) => {
+        //     return prevDatas.filter((item) => {
+        //         return id !== item.id;
+        //     });
+        // });
     }
 
     return (

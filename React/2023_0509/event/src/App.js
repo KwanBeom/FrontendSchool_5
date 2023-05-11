@@ -11,7 +11,7 @@ function App() {
     const [login, setLogin] = useState(false);
     const [viewModal, setViewModal] = useState(true);
 
-    function modalClose() {
+    function modalClose(e) {
         setViewModal(false);
     }
 
