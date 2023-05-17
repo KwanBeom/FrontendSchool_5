@@ -16,6 +16,9 @@ function App() {
             <Link to="/three"> three </Link>
             <Link to="/three/hojunone"> three-one </Link>
             <Link to="/three/hojuntwo"> three-two </Link>
+            <Link to="/blog/1"> blog </Link>
+            <Link to="/blog/2"> blog </Link>
+            <Link to="/blog/324"> blog </Link>
             {/* 라우트를 감싸줍니다. */}
             <Routes>
                 <Route path="/" element={<Index />} />
@@ -48,10 +51,10 @@ function Three() {
     return <h1>hello world3</h1>;
 }
 
-function Blog() {
+function Blog(props) {
     const location = useLocation();
     console.log(location);
-    return <h1>hello Blog</h1>;
+    return <h1>hello Blog{location.pathname}</h1>;
 }
 
 function HojunIndex() {
