@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+        }
+        canvas {
+            border: 1px solid #000;
+        }
+        #canvas{
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvasBg" width="300" height="300"></canvas>
+    <canvas id="canvas" width="300" height="300"></canvas>
+
+    <script>
+        // 기본 캔버스
+        const canvas = document.getElementById("canvas"),
+            ctx = canvas.getContext('2d'),
+            cWidth = canvas.width,
+            cHeight = canvas.height
+        // 배경 캔버스
+        const canvasBg = document.getElementById("canvasBg"),
+            ctxBg = canvasBg.getContext('2d')
+
+        
+    </script>
+</body>
+</html>
