@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = [10, 9, 8, 7, 6, 5, 4, 1, 2, 4, 5, 3]
+    function insertionSort([...arr]) {
+      for (let i = 1; i < arr.length; i++) {
+        // j-1은 정렬되었다고 간주되는 데이터 중 가장 큰 원소를 의미
+        // j는 정렬이 필요한 원소를 의미
+        // 만약 arr[j]가 arr[j-1]보다 크다면 위치를 교환할 필요가 없음
+        // 만약 반대라면 교환
+        for (let j = i; j > 0 && arr[j] < arr[j - 1]; j--) {
+          [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]]
+        }
+      }
+      return arr
+    }
+
+
+    const foods = [
+      { cookingTime: 10, deliveryTime: 15 },
+      { cookingTime: 5, deliveryTime: 115 },
+      { cookingTime: 25, deliveryTime: 13 },
+      { cookingTime: 30, deliveryTime: 5 },
+      { cookingTime: 30, deliveryTime: 20 },
+    ]
+
+    function bubbleSort([...arr]) {
+
+      for (let i = 0; i < arr.length - 1; i++) {
+        let isSorted = true;
+
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+          const timeOne = arr[j].cookingTime + arr[j].deliveryTime;
+          const timeTwo = arr[j + 1].cookingTime + arr[j + 1].deliveryTime;
+
+          if (timeTwo < timeOne) {
+            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            isSorted = false;
+          }
+        }
+        if (isSorted) break
+      }
+
+      return arr
+    }
+
+
+    // console.log(bubbleSort(foods))
+
+    function selectionSort([...foods]) {
+      for (let i = 0; i < foods.length; i++) {
+        let minIdx = i;
+        for (let j = i + 1; j < foods.length; j++) {
+          const timeOne = foods[j].cookingTime + foods[j].deliveryTime;
+          const timeTwo = foods[minIdx].cookingTime + foods[minIdx].deliveryTime;
+
+          if (timeOne < timeTwo) {
+            minIdx = j
+          }
+        }
+        if (minIdx !== i) {
+          [foods[i], foods[minIdx]] = [foods[minIdx], foods[i]]
+        }
+      }
+      return foods
+    }
+    // console.log(selectionSort(foods))
+
+    function insertionSort([...foods]) {
+      for (let i = 0; i < foods.length; i++) {
+        for (let j = i; j > 0 && (foods[j].cookingTime + foods[j].deliveryTime) < (foods[j - 1].cookingTime + foods[j - 1].deliveryTime); j--) {
+          [foods[j], foods[j - 1]] = [foods[j - 1], foods[j]]
+        }
+      }
+      return foods
+    }
+
+    console.log(insertionSort(foods))
+  </script>
+</body>
+
+</html>
