@@ -1,25 +1,50 @@
-function App() {
-  const [num, setnum] = React.useState(0);
-  const [num2, setnum2] = React.useState(0);
+const { useState } = require("react");
 
-  React.useEffect(() => {
-    console.log("num이 바뀌었읍니다");
-  }, [num]);
-  React.useEffect(() => {
-    console.log("num2가 바뀌었읍니다");
-  }, [num2]);
+function Button({ onClick, children }) {
+  return <button onClick={onClick}>{children}</button>;
+}
+
+function AnotherCounter({ setNum }) {
+  const powerNum = () => {
+    setNum((num) => num * 2);
+  };
   return (
     <>
-      {num} {num2}
-      <button onClick={() => setnum(num + 1)}>+</button>
-      <button onClick={() => setnum2(num2 - 1)}>-</button>
+      <Button onClick={powerNum}></Button>
     </>
   );
 }
 
-function index() {
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<App />);
+function Counter({ setNum }) {
+  const plusNum = () => {
+    setNum((num) => num + 1);
+  };
+  const minusNum = () => {
+    setNum((num) => num - 1);
+  };
+  // jsx안에서 값을 사용하고싶으면 {} 중괄호로 감싸라!
+  return (
+    <>
+      <Button onClick={plusNum}>+</Button>
+      <Button onClick={minusNum}>-</Button>
+    </>
+  );
 }
 
-index();
+function HomePage() {
+  const [num, setNum] = useState;
+  return (
+    <>
+      {num}
+      <Counter setNum={setNum} />
+      <AnotherCounter setNum={setNum} />
+    </>
+  );
+}
+
+function App() {
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<HomePage />);
+}
+
+App();
