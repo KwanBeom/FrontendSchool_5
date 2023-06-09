@@ -13,7 +13,7 @@ export const useLogin = () => {
   const { dispatch } = useAuthContext();
 
   console.log(appAuth.currentUser);
-  setInterval(() => {
+  setTimeout(() => {
     console.log(appAuth.currentUser);
   }, 1000);
 

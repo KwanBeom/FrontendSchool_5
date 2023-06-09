@@ -1,14 +1,19 @@
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { appFirestore } from "../firebase/config";
 
-export const useCollection = (transaction) => {
+export const useCollection = (transaction, myQuery) => {
   const [documents, setDocuments] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let q;
+    if (myQuery) {
+      q = query(collection(appFirestore, transaction), where(...myQuery), orderBy("createTime", "desc"));
+    }
+
     const unsubscribe = onSnapshot(
-      collection(appFirestore, transaction),
+      myQuery ? q : collection(appFirestore, transaction),
       (snapshot) => {
         let result = [];
 

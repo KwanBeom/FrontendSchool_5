@@ -1,6 +1,6 @@
 .heart{
   font-size: 16px;
-  
+  background: url('../../assets/image/heart.svg') no-repeat 0 center / contain;
   padding-left: 1.4em;
 }
 
@@ -49,13 +49,13 @@ h3{
 .diary-article::before{
   top: -20px;
   left: 30px;
-  
+  background: #fffaf0 url(../../assets/image/quote-start.svg) no-repeat;
 }
 
 .diary-article::after{
   bottom: -20px;
   right: 30px;
-  
+  background: #fffaf0  url(../../assets/image/quote-end.svg) no-repeat;
 }
 .article-title{
   color: #29363d;
