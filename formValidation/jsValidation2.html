@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="email" required />
+      <input type="url" required />
+      <button>제출</button>
+    </form>
+  </body>
+  <script>
+    const inputs = document.querySelectorAll("input");
+
+    document.querySelector("button").addEventListener("click", () => {
+      inputs.forEach((input) => {
+        valCheck(input);
+      });
+    });
+
+    function valCheck(target) {
+      if (target.validity.valueMissing) {
+        target.setCustomValidity("정신차려");
+      } else if (target.validity.typeMismatch) {
+        target.setCustomValidity("데이터를 입력해주세요");
+      } else {
+        target.setCustomValidity("");
+      }
+    }
+  </script>
+</html>

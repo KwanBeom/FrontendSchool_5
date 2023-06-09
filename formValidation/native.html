@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input:required {
+        border: 1px solid red;
+      }
+      input:invalid {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="a">
+      <label for="stuff">원하는 수량을 입력하세요</label>
+      <input type="number" min="30" id="stuff" />
+      <label for="stuff2">이메일을 입력하세요</label>
+      <input type="email" id="stuff2" minlength="10" maxlength="20" required />
+    </form>
+    <button type="submit" form="a"></button>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="email" pattern="[a-zA-Z0-9]*@[a-z]*\.[a-z]*" />
+      <button type="submit">제출</button>
+    </form>
+  </body>
+  <script>
+    const input = document.querySelector("input");
+
+    document.querySelector("form").addEventListener("submit", (e) => {
+      if (input.validity.typeMismatch || input.value === "") {
+        e.preventDefault();
+        input.setCustomValidity("올바른 형식의 이메일을 입력하세요");
+      } else {
+        input.setCustomValidity("");
+        console.log("submit!");
+      }
+    });
+  </script>
+</html>
