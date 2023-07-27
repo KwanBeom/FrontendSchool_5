@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doc</title>
+  </head>
+  <body>
+    <h1>hello world</h1>
+    <div id="root"></div>
+
+    <ul class="list">
+      <li>dog</li>
+      <li>cat</li>
+      <li>bird</li>
+    </ul>
+
+    <script>
+      const tag = {
+        tag: "ul",
+        props: {
+          className: "list",
+        },
+        children: [
+          {
+            tag: "li",
+            props: {},
+            children: ["dog"],
+          },
+          {
+            tag: "li",
+            props: {},
+            children: ["cat"],
+          },
+          {
+            tag: "li",
+            props: {},
+            children: ["bird"],
+          },
+        ],
+      };
+    </script>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
